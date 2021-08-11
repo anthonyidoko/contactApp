@@ -16,10 +16,11 @@
         <entry key="app/src/main/res/layout/activity_contact_add.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_contact_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_contact_info.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/activity_edit.xml" value="0.28177083333333336" />
         <entry key="app/src/main/res/layout/activity_firebase_data.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_read_contact.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.67" />
         <entry key="app/src/main/res/layout/contact_items.xml" value="0.22" />
         <entry key="app/src/main/res/layout/read_contact_recycler_view_layout.xml" value="0.1" />
       </map>

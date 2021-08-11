@@ -3,6 +3,7 @@ package com.example.mycontactapp.Ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -22,9 +23,14 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Reference the various views
         val saveText: TextView = findViewById(R.id.saveText)
         val backArrow: ImageView = findViewById(R.id.backArrow)
+        val editIcon: ImageView = findViewById(R.id.editIcon)
+        val threeDotIcon: ImageView = findViewById(R.id.threeDotIcon)
+        val deleteItem: TextView = findViewById(R.id.deleteItem)
 
+        //Save to database and Navigate to the contact page
         saveText.setOnClickListener {
             val firstName = binding.firstName.text.toString()
             val lastName = binding.lastName.text.toString()
@@ -32,14 +38,13 @@ class RegistrationActivity : AppCompatActivity() {
             val mobileNumber = binding.mobile.text.toString()
             val email = binding.email.text.toString()
 
-//            FirebaseApp.initializeApp(this)
-
+            //Initialize database
             database = FirebaseDatabase.getInstance().getReference("PersonDetail")
 
+            //Save to database
             val personDetail = PersonDetail(firstName,lastName,phoneNumber,mobileNumber,email)
 
-
-
+            //Clear the fields
             database.child(firstName).setValue(personDetail).addOnSuccessListener {
                 binding.firstName.text.clear()
                 binding.lastName.text.clear()
@@ -53,20 +58,17 @@ class RegistrationActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
-        }
 
-
-
-
-
-        //SetOnclick listener with intent for the backArrow object, to go back to main activity
-
-        backArrow.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this,FirebaseDataActivity::class.java)
             startActivity(intent)
         }
 
-
+        //SetOnclick listener with intent for the backArrow object, to go back to main activity
+        backArrow.setOnClickListener {
+            val intent = Intent(this, FirebaseDataActivity::class.java)
+            startActivity(intent)
+        }
 
     }
+
 }
