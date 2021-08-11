@@ -11,4 +11,5 @@
     <color name="app_bg">#eeeeee</color>
     <color name="registration_image_bg">#37474f</color>
     <color name="detail_activity_image_bg">#66ffa6</color>
+    <color name="grantPermissionMessage">#ff4081</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.mycontactapp
+package com.example.mycontactapp.Ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mycontactapp.Data.PersonDetail
+import com.example.mycontactapp.R
 import com.example.mycontactapp.databinding.ActivityRegistrationBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -61,7 +62,7 @@ class RegistrationActivity : AppCompatActivity() {
         //SetOnclick listener with intent for the backArrow object, to go back to main activity
 
         backArrow.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
