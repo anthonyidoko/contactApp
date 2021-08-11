@@ -50,6 +50,7 @@ class FirebaseDataActivity : AppCompatActivity(), ContactRecyclerViewAdapter.Set
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
+                    adapterList.clear()
                     for (personSnapShot in snapshot.children){
                         val person = personSnapShot.getValue(PersonDetail::class.java)
                         if (person != null){
